@@ -98,10 +98,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or issues, feel free to open an issue in this repository, and I'll get back to you as soon as possible!
 
----
 
 Happy wardriving! 🚗📡
-```
-
-
-
