@@ -35,7 +35,7 @@ To install the required dependencies, simply run the provided `install.sh` scrip
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/wardriving.git
+   git clone https://github.com/Diablox00/wifi-wardriving.git
    cd wardriving
    ```
 
