@@ -1,7 +1,6 @@
 # wifi-wardriving
 This project provides a bash script for wardriving with a Raspberry Pi 5 or laptop, G-Mouse VK-162 GPS module, and a wireless adapter. It captures WiFi network data with airodump-ng, logs GPS coordinates, and converts them to GPX format for use with tools like WiGLE and Google Earth.
 
-Got it! Here's an updated `README.md` without the installation steps since the script handles that for the user:
 
 ```markdown
 # Wardriving with Raspberry Pi 5, Laptop, and GPS
