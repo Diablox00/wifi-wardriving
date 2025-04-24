@@ -33,6 +33,7 @@ sleep 1
 if [ ! -d "data" ]; then
     echo -e "\e[1;33m[*]\e[0m \e[1m'data' directory not found. Creating it...\e[0m"
     mkdir -p data
+    sudo rm data/*
 fi
 
 # === START AIRODUMP-NG WITH GPS LOGGING ===
