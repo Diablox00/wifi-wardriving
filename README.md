@@ -36,13 +36,7 @@ Tested on **Kali Linux** (or any Debian-based distribution) running on a Raspber
    Open `wardrive.sh` in your preferred editor and set:
    - `GPS_DEV` (e.g., `/dev/ttyUSB0`)
    - `WIRELESS_IFACE` (e.g., `wlan1`)
-   - `CAPTURE_PREFIX` (e.g., `wardrive_capture`)
-
-4. **Make the script executable**:
-   ```bash
-   chmod +x wardrive.sh
-   ```
-
+     
 ## 📝 Usage
 
 Run the script with superuser privileges:
