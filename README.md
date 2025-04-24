@@ -41,11 +41,6 @@ Tested on **Kali Linux** (or any Debian-based distribution) running on a **Raspb
 
    You can edit these variables using a text editor (e.g., `nano wardrive.sh`).
 
-4. **Ensure execute permissions**:
-   ```bash
-   chmod +x wardrive.sh
-   ```
-
 ## 📝 Usage
 
 Run the script with superuser privileges:
