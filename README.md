@@ -17,7 +17,7 @@ Tested on **Kali Linux** (or any Debian-based distribution) running on a Raspber
 - **Wireless Adapter** that supports monitor mode (e.g., Alfa AWUS036ACH)
 - **aircrack-ng** suite (`airodump-ng`)
 - **gpsd** and **gpsd-clients** for GPS handling
-- **gpsbabel** for GPX conversion
+
 
 ## 🔧 Installation
 
