@@ -5,9 +5,6 @@ GPS_DEV="/dev/ttyACM0"
 WIRELESS_IFACE="wlan0"
 CAPTURE_PREFIX="wardrive_capture"
 
-
-sudo rm data/*
-
 # === STOP GPS SERVICE IF RUNNING ===
 #echo "[-] Stopping gpsd.socket..."
 #sudo systemctl stop gpsd.socket
