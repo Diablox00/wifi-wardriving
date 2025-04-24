@@ -5,16 +5,17 @@ echo "[+] Installing dependencies for wardrive.sh..."
 sudo apt-get install -y aircrack-ng gpsd gpsd-clients gpsbabel -y
 
 # === Instructions for setting variables ===
-echo "[+] Use a text editor to edit the wardrive.sh script and set the following variables:"
-echo "  - GPS_DEV: The GPS device (e.g., /dev/ttyUSB0)"
-echo "  - WIRELESS_IFACE: The wireless interface (e.g., wlan1)"
-echo "  - CAPTURE_PREFIX: The prefix for the capture files (e.g., wardrive_capture)"
-echo "[+] Make sure to give execute permissions to the script:"
-
+echo -e "\e[1;34m# === Instructions for setting variables ===\e[0m"
+echo -e "\e[1;32m[+]\e[0m \e[1mUse a text editor to edit the \e[4mwardrive.sh\e[24m script and set the following variables:\e[0m"
+echo -e "  \e[1;33m- GPS_DEV:\e[0m \e[36mThe GPS device (e.g., /dev/ttyUSB0)\e[0m"
+echo -e "  \e[1;33m- WIRELESS_IFACE:\e[0m \e[36mThe wireless interface (e.g., wlan1)\e[0m"
+echo -e "  \e[1;33m- CAPTURE_PREFIX:\e[0m \e[36mThe prefix for the capture files (e.g., wardrive_capture)\e[0m"
 # === Give execute permissions to wardrive.sh ===
-echo "[-_-] Giving execute permissions to wardrive.sh..."
+echo -e "\e[1;34m# === Give execute permissions to wardrive.sh ===\e[0m"
+echo -e "\e[1;36m[-_-]\e[0m \e[1mGiving execute permissions to \e[4mwardrive.sh\e[24m...\e[0m"
 chmod +x wardrive.sh
 
 # === How to run the script ===
-echo "[+] To run the script, use the following command:"
-echo "[+] sudo bash wardrive.sh"
+echo -e "\e[1;34m# === How to run the script ===\e[0m"
+echo -e "\e[1;32m[+]\e[0m \e[1mTo run the script, use the following command:\e[0m"
+echo -e "\e[1;32m[+]\e[0m \e[1;33msudo bash wardrive.sh\e[0m"
