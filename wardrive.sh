@@ -5,6 +5,7 @@ GPS_DEV="/dev/ttyACM0"
 WIRELESS_IFACE="wlan0"
 CAPTURE_PREFIX="wardrive_capture"
 
+
 sudo rm data/*
 
 # === STOP GPS SERVICE IF RUNNING ===
@@ -16,47 +17,41 @@ sudo rm data/*
 #sudo gpsd $GPS_DEV -F /var/run/gpsd.sock
 
 # === WAIT FOR GPS FIX ===
-echo "[*] Waiting for GPS fix..."
+echo -e "\e[1;33m[*]\e[0m \e[1mWaiting for GPS fix...\e[0m"
 timeout 15s cgps -s
 
 # === ENABLE MONITOR MODE ===
-echo "[-_-] Putting $WIRELESS_IFACE into monitor mode..."
+echo -e "\e[1;36m[-_-]\e[0m \e[1mPutting \e[32m$WIRELESS_IFACE\e[0m \e[1minto monitor mode...\e[0m"
 sudo airmon-ng start $WIRELESS_IFACE
 
 # Extract monitor interface name (usually adds 'mon')
 MON_IFACE="${WIRELESS_IFACE}mon"
 
+sleep 1
+
 # Check if the 'data' directory exists
 if [ ! -d "data" ]; then
-    echo "[*] 'data' directory not found. Creating it..."
+    echo -e "\e[1;33m[*]\e[0m \e[1m'data' directory not found. Creating it...\e[0m"
     mkdir -p data
 fi
 
 # === START AIRODUMP-NG WITH GPS LOGGING ===
-echo "[+] Starting airodump-ng with GPS logging..."
+echo -e "\e[1;32m[+]\e[0m \e[1mStarting airodump-ng with GPS logging...\e[0m"
 sudo airodump-ng "$MON_IFACE" --gpsd -w "data/$CAPTURE_PREFIX"
 
-# === CONVERT GPS FILE TO GPX, KML, AND GEOJSON FORMAT (if it exists) ===
-GPS_FILE="data/${CAPTURE_PREFIX}-01.gps"
+sleep 3
 
-if [ -f "$GPS_FILE" ]; then
-    echo "[+] Found GPS file: $GPS_FILE"
-    
-    # Convert to GPX (intermediate standard format)
-    echo "[+] Converting $GPS_FILE to GPX format..."
-    gpsbabel -i nmea -f "$GPS_FILE" -o gpx -F "data/${CAPTURE_PREFIX}.gpx"
+echo -e "\e[1;32m[+]\e[0m \e[1mRestoring wlan0mon\e[0m"
+sudo airmon-ng stop wlan0mon
 
-    # Convert GPX to KML
-    echo "[+] Converting GPX to KML format..."
-    gpsbabel -i gpx -f "data/${CAPTURE_PREFIX}.gpx" -o kml -F "data/${CAPTURE_PREFIX}.kml"
+echo -e "\e[1;32m[+]\e[0m \e[1mStarting Network Manager\e[0m"
+sudo systemctl restart NetworkManager
 
-    # Convert GPX to GeoJSON
-    echo "[+] Converting GPX to GeoJSON format..."
-    gpsbabel -i gpx -f "data/${CAPTURE_PREFIX}.gpx" -o geojson -F "data/${CAPTURE_PREFIX}.geojson"
+sleep 5
 
-    echo "[+] Conversion completed: KML and GeoJSON saved to data/"
+echo -e "\e[1;31m[-]\e[0m \e[1mConverting Data to KML...\e[0m"
+sudo python kml.py
 
-else
-    echo "[!] GPS file $GPS_FILE not found — skipping conversion."
-fi
+
+
 
