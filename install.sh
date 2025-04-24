@@ -2,7 +2,7 @@
 
 # === Install dependencies for wardrive.sh ===
 echo "[+] Installing dependencies for wardrive.sh..."
-sudo apt-get install -y aircrack-ng gpsd gpsd-clients gpsbabel -y
+sudo apt-get install -y aircrack-ng gpsd gpsd-clients -y
 
 # === Instructions for setting variables ===
 echo -e "\e[1;34m# === Instructions for setting variables ===\e[0m"
