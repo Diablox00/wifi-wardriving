@@ -51,15 +51,14 @@ The script will:
 3. Wait for a GPS fix.
 4. Enable monitor mode on the wireless interface.
 5. Launch `airodump-ng` to capture WiFi data with GPS logging.
-6. Convert the GPS log file into GPX format.
-7. Cleanup and restore network settings.
+6. Cleanup and restore network settings.
 
 ### 📁 Output Files
 
 - `wardrive_capture-01.cap` — Captured packet dump
 - `wardrive_capture-01.csv` — CSV summary of detected networks
 - `wardrive_capture-01.gps` — Raw GPS log (NMEA)
-- `wardrive_capture-01.gpx` — GPX file for mapping
+
 
 ## 🌐 Upload to WiGLE
 
