@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import csv
+import os
 from xml.dom.minidom import Document
 from termcolor import colored
 
@@ -80,3 +81,10 @@ if __name__ == "__main__":
         "data/wardrive_capture-01.log.csv",
         "wardrive_capture-01.kml"
     )
+    Google_Earth = input(colored("[-_-] Open Google Earth? (Y/N): ", "red")).lower()
+    if Google_Earth == "y":
+        os.system("python3 google-earth.py")
+        print(colored("[+] ✔ Google Earth opened successfully!", "green"))
+    else:
+        print(colored("[-_-] Exiting...", "red"))
+        exit(0)
