@@ -22,7 +22,8 @@ echo -e "\e[1;36m[-_-]\e[0m \e[1mPutting \e[32m$WIRELESS_IFACE\e[0m \e[1minto mo
 sudo airmon-ng start $WIRELESS_IFACE
 
 # Extract monitor interface name (usually adds 'mon')
-MON_IFACE="${WIRELESS_IFACE}mon"
+MON_IFACE=$(airmon-ng | grep "$WIRELESS_IFACE" | grep -oP '\w+mon')
+echo -e "\e[1;36m[-_-]\e[0m \e[1mMonitor interface is \e[32m$MON_IFACE\e[0m"
 
 sleep 1
 
@@ -48,7 +49,7 @@ sudo systemctl restart NetworkManager
 sleep 5
 
 echo -e "\e[1;31m[-]\e[0m \e[1mConverting Data to KML...\e[0m"
-sudo python kml.py
+sudo python3 kml.py
 
 
 
