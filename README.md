@@ -1,4 +1,3 @@
-```markdown
 # Wifi Wardriving
 
 This project provides a Bash script for wardriving with a **Raspberry Pi 5** or **laptop**, a **G‑Mouse VK‑162 GPS module**, and a **wireless adapter**. It captures WiFi network data with **airodump-ng**, logs GPS coordinates via **gpsd**, and converts them into **KML** format for use with mapping tools such as **Google Earth**.
@@ -14,11 +13,11 @@ This project provides a Bash script for wardriving with a **Raspberry Pi 5** or 
 
 Tested on **Kali Linux** (or any Debian-based distribution) running on a **Raspberry Pi 5** or a **laptop**. You will need:
 
-- **GPS Module** (e.g., G‑Mouse VK‑162) connected via USB
-- **Wireless Adapter** that supports monitor mode (e.g., Alfa AWUS036ACH)
-- **aircrack-ng** suite (`airodump-ng`)
-- **gpsd** and **gpsd-clients** for GPS handling
-- **python** for KML generation and GPS log parsing
+- **GPS Module** (e.g., G‑Mouse VK‑162) connected via USB  
+- **Wireless Adapter** that supports monitor mode (e.g., Alfa AWUS036ACH)  
+- **aircrack-ng** suite (`airodump-ng`)  
+- **gpsd** and **gpsd-clients** for GPS handling  
+- **python** for KML generation and GPS log parsing  
 
 ## 🔧 Installation
 
@@ -33,14 +32,13 @@ Tested on **Kali Linux** (or any Debian-based distribution) running on a **Raspb
    sudo bash install.sh
    ```
 
-3. **Configure the script**:
-   Open `wardrive.sh` in your preferred editor and set:
+3. **Configure the script**: Open `wardrive.sh` in your preferred editor and set:
    - `GPS_DEV` (e.g., `/dev/ttyUSB0`)
    - `WIRELESS_IFACE` (e.g., `wlan1`)
    - `CAPTURE_PREFIX` (e.g., `wardrive_capture`)
 
    You can edit these variables using a text editor (e.g., `nano wardrive.sh`).
-
+   
 ## 📝 Usage
 
 Run the script with superuser privileges:
